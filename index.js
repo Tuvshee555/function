@@ -557,9 +557,28 @@
 // split('APPLExxBANANAxxCHERRY', 'xx') --> ['APPLE', 'BANANA', 'CHERRY']
 // split('xyz', 'r') --> ['xyz']
 
-function split(str){
-    
+function split(str, delimiter) {
+  result = []; // Declare the result array without var/const/let
+  currentSubstring = ""; // Declare the current substring without var/const/let
+  for (i = 0; i < str.length; i++) {
+    if (str.slice(i, i + delimiter.length) === delimiter) {
+      // Add the current substring to the result array manually
+      result[result.length] = currentSubstring; // Manually add to result
+      currentSubstring = ""; // Reset current substring builder
+      i += delimiter.length -1; // Skip over the delimiter
+    } else {
+      currentSubstring += str[i]; // Add character to the current substring
+    }
+  }
+
+  // Add the last substring if any remains
+  if (currentSubstring !== "") {
+    result[result.length] = currentSubstring; // Add the last remaining substring
+  }
+
+  return result;
 }
+console.log(split("a-b-c", "-"));
 
 // Exercise 9
 
