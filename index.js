@@ -261,23 +261,21 @@
 // Examples:
 // tipAmount(100, 'good') --> 20
 // tipAmount(40, 'fair') --> 6
-function tipAmount(bill, service) {
-  let tipPercentage;
-  if (service === "good") {
-    tipPercentage = 0.2;
-  } else if (service === "fair") {
-    tipPercentage = 0.15;
-  } else if (service === "poor") {
-    tipPercentage = 0.1;
-  } else {
-    return "Invalid service level";
-  }
-  return bill * tipPercentage;
-}
-
-// Example usage:
-console.log(tipAmount(100, "good"));
-console.log(tipAmount(40, "fair"));
+// function tipAmount(bill, service) {
+//   let tipPercentage;
+//   if (service === "good") {
+//     tipPercentage = 0.2;
+//   } else if (service === "fair") {
+//     tipPercentage = 0.15;
+//   } else if (service === "poor") {
+//     tipPercentage = 0.1;
+//   } else {
+//     return "Invalid service level";
+//   }
+//   return bill * tipPercentage;
+// }
+// console.log(tipAmount(100, "good"));
+// console.log(tipAmount(40, "fair"));
 
 // Exercise 2
 
@@ -290,6 +288,16 @@ console.log(tipAmount(40, "fair"));
 // totalAmount(100, 'good') --> 120
 // totalAmount(40, 'fair') --> 46
 
+// function totalAmount(tip, bill){
+//     if (bill === `good`){
+//         return tip*1.20
+//     } else if (bill === `fair`){
+//         return tip*1.15
+//     }
+// }
+// console.log(totalAmount(100, `good`));
+// console.log(totalAmount(40, `fair`));
+
 // Exercise 3
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -300,6 +308,19 @@ console.log(tipAmount(40, "fair"));
 // Examples:
 // splitAmount(100, 'good', 5) --> 24
 // splitAmount(40, 'fair', 2) --> 23
+
+// function splitAmount(person, servise, who){
+//     if (servise === `good`){
+//         return (person+person*0.2)/who
+//     } else if (servise === `fair`){
+//         return (person+person*0.15)/who
+//     } else if (servise === `poor`){
+//         return (person+person*0.1)/who
+//     }
+// }
+// console.log(splitAmount(100, `good`, 5));
+// console.log(splitAmount(100, `fair`, 2));
+// console.log(splitAmount(100, `poor`, 2));
 
 // Exercise 4
 
@@ -317,6 +338,20 @@ console.log(tipAmount(40, "fair"));
 // isVowel(99) --> false
 // isVowel({e: 'Elephant'}) --> false
 
+// function isVowel(letter){
+//     let smaller = letter.toLowerCase()
+//     if (smaller === `a`){
+//         return true
+//     } else if (smaller === `i`){
+//         return true
+//     } else if (smaller === `e`){
+//         return true
+//     } else {
+//         return false
+//     }
+// }
+// console.log(isVowel(`a`))
+
 // Exercise 5
 
 // Write a function "rockPaperScissors" which takes the throw of player 1 and
@@ -328,6 +363,21 @@ console.log(tipAmount(40, "fair"));
 // rockPaperScissors('rock', 'paper') --> 'player 2'
 // rockPaperScissors('paper', 'paper') --> 'draw'
 
+// function rockPaperScissors(player1, player2) {
+//   if (player1 === `Rock` && player2 === `scissors`) {
+//     return "player1_won";
+//   } else if (player1 === `Rock` && player2 === `paper`) {
+//     return "player2_won";
+//   } else if (player1 === `Rock` && player2 === `Rock`) {
+//     return "draw";
+//   } else if (player1 === `scissors` && player2 === `scissors`) {
+//     return "draw";
+//   } else if (player1 === `paper` && player2 === `paper`) {
+//     return "draw";
+//   }
+// }
+// console.log(rockPaperScissors(`Rock`, `scissors`));
+
 // Exercise 6
 
 // Write a function "numberJoinerWhile" which is given a start number and an end number.
@@ -337,9 +387,38 @@ console.log(tipAmount(40, "fair"));
 // numberJoinerWhile(1, 10) --> '1_2_3_4_5_6_7_8_9_10'
 // numberJoinerWhile(12, 14) --> '12_13_14'
 
+// function numberJoinerFancy(start, end) {
+//   let result = "";
+//   let i = start;
+//   while (i <= end) {
+//     result += i; //result = result + i;
+//     result += "_";
+//     console.log(result);
+//     console.log(i);
+//     i++;
+//   }
+// }
+// console.log(numberJoinerFancy(1, 10));
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function "numberJoinerFor" which does the same thing as "numberJoinerWhile",
 // except using a "for" loop internally.
+
+// function numberJoinerFor(start, end) {
+//   let result = "";
+
+//   for (let i = start; i <= end; i++) {
+//     if (i >= start) {
+//       result += i; //result = result+i
+//       result += "_"; //result = result+"_"
+//     }
+//   }
+
+//   return result;
+// }
+
+// console.log(numberJoinerFor(1, 10));
+// console.log(numberJoinerFor(12, 14));
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function "numberJoinerFancy" which does the same thing as "numberJoinerWhile",
@@ -350,6 +429,17 @@ console.log(tipAmount(40, "fair"));
 // numberJoinerFancy(1, 5, '~') --> 1~2~3~4~5
 // numberJoinerFancy(3, 6, '***BANANAS***') --> 1***BANANAS***2***BANANAS***3
 
+// function numberJoinerFancy(num1 , num2 , word3){
+//     let result = ""
+//     for(i=num1; i<=num2; i++){
+//         result += i
+//         result +="_"
+//         result += word3
+//     }
+//     return result
+// }
+// console.log(numberJoinerFancy(1, 10, '***BANANAS***'));
+
 // Exercise 7
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -357,6 +447,17 @@ console.log(tipAmount(40, "fair"));
 //
 // Example:
 // reverse("skoob") --> "books"
+
+// function reverse(str) {
+//   return str
+//     .split(" ")
+//     .map((word) => word.split("").reverse().join(""))
+//     .join(" ");
+// }
+
+// console.log(reverse("skoob"));
+// console.log(reverse("hello world"));
+// console.log(reverse("reverse every word"));
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function "findLongestWord" that takes a string of words and returns
@@ -366,6 +467,36 @@ console.log(tipAmount(40, "fair"));
 // Example:
 // findLongestWord('a book full of dogs') --> 'book'
 
+// function findLongestWord(str) {
+//   const words = str.split(" ");
+//   let longestWord = "";
+
+//   for (let word of words) {
+//     if (word.length > longestWord.length) {
+//       longestWord = word;
+//     }
+//   }
+//   return longestWord;
+// }
+
+// console.log(findLongestWord("a book full of dogs"));
+
+// function findLongestWord(str) {
+//   let words = str.split(" ");
+
+//   let longestWord = "";
+
+//   for (let word of words) {
+//     if (word.length > longestWord.length) {
+//       longestWord = word;
+//     }
+//   }
+
+//   return longestWord;
+// }
+
+// console.log(findLongestWord("a book full of dogs"));
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function called "nicer"
 // It should clean up the language in its input sentence.
@@ -374,6 +505,24 @@ console.log(tipAmount(40, "fair"));
 // Example:
 // nicer('mom get the heck in here and bring me a darn sandwich.')
 // > 'mom get the in here and bring me a sandwich.'
+
+// function nicer(saul) {
+//   let saulgood = saul.split(" ");
+//   let goodwrods = "";
+//   for (let sauls of saulgood) {
+//     if ("heck" !== sauls) {
+//       goodwrods += sauls + " ";
+//     } else if ("darn" !== sauls) {
+//       goodwrods += sauls + " ";
+//     } else if ("dang" !== sauls) {
+//       goodwrods += sauls + " ";
+//     } else if ("crappy" !== sauls) {
+//       goodwrods += sauls + " ";
+//     }
+//   }
+//   return goodwrods;
+// }
+// console.log(nicer("mom get the in here and bring me a sandwich."));
 
 // Exercise 8
 
@@ -386,6 +535,17 @@ console.log(tipAmount(40, "fair"));
 // capitalizeAll('hello world') --> 'Hello World'
 // capitalizeAll('every day is like sunday') --> 'Every Day Is Like Sunday'
 
+// function capitalizeAll(sentence) {
+//   let str = sentence.split(" ");
+//   let fixed = "";
+//   for (let i = 0; i < str.length; i++) {
+//     fixed += str[i].charAt(0).toUpperCase() + str[i].slice(1) + " ";
+//   }
+//   return fixed.trim();
+// }
+
+// console.log(capitalizeAll("every day is like sunday"));
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function called "split" that does the same thing as String.split
 // It should take two inputs: (1) a string and (2) a delimiter string
@@ -396,6 +556,10 @@ console.log(tipAmount(40, "fair"));
 // split('a-b-c', '-') --> ['a', 'b', 'c']
 // split('APPLExxBANANAxxCHERRY', 'xx') --> ['APPLE', 'BANANA', 'CHERRY']
 // split('xyz', 'r') --> ['xyz']
+
+function split(str){
+    
+}
 
 // Exercise 9
 
