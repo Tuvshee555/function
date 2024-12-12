@@ -483,15 +483,13 @@
 
 // function findLongestWord(str) {
 //   let words = str.split(" ");
-
 //   let longestWord = "";
 
-//   for (let word of words) {
-//     if (word.length > longestWord.length) {
-//       longestWord = word;
+//   for (i = 0; i <= words.length[i]; i++) {
+//     if (words.length > longestWord.length) {
+//       longestWord = words;
 //     }
 //   }
-
 //   return longestWord;
 // }
 
@@ -557,39 +555,68 @@
 // split('APPLExxBANANAxxCHERRY', 'xx') --> ['APPLE', 'BANANA', 'CHERRY']
 // split('xyz', 'r') --> ['xyz']
 
-function split(str, delimiter) {
-  result = []; // Declare the result array without var/const/let
-  currentSubstring = ""; // Declare the current substring without var/const/let
-  for (i = 0; i < str.length; i++) {
-    if (str.slice(i, i + delimiter.length) === delimiter) {
-      // Add the current substring to the result array manually
-      result[result.length] = currentSubstring; // Manually add to result
-      currentSubstring = ""; // Reset current substring builder
-      i += delimiter.length -1; // Skip over the delimiter
-    } else {
-      currentSubstring += str[i]; // Add character to the current substring
-    }
-  }
+// function split(str, delimiter) {
+//   result = [];
+//   currentSubstring = "";
+//   for (i = 0; i < str.length; i++) {
+//     if (str.slice(i, i + delimiter.length) === delimiter) {
+//       result[result.length] = currentSubstring;
+//       currentSubstring = ""
+//       i += delimiter.length - 1;
 
-  // Add the last substring if any remains
-  if (currentSubstring !== "") {
-    result[result.length] = currentSubstring; // Add the last remaining substring
-  }
+//     } else {
+//       currentSubstring += str[i];
+//     }
+//   }
 
-  return result;
-}
-console.log(split("a-b-c", "-"));
+//   if (currentSubstring !== "") {
+//     result[result.length] = currentSubstring;
+//   }
+
+//   return result;
+// }
+// console.log(split("a-b-c", "-"));
 
 // Exercise 9
 
 // Write a function "max" that takes an array of numbers returns the highest
 // number in the array.
 
+// function max(numbers) {
+//   if (numbers.length === 0) {
+//     return null;
+//   }
+
+//   let highest = numbers[0];
+//   for (let i = 1; i < numbers.length; i++) {
+//     if (numbers[i] > highest) {
+//       highest = numbers[i];
+//     }
+//   }
+//   return highest;
+// }
+
+// console.log(max([1, 2, 3, 4, 5]));
+// console.log(max([-10, -20, -3, -4]));
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function "sumNumbers" which is given an array of numbers and returns
 // the sum of the numbers.
 // Example:
 // sumNumbers([1, 4, 8]) --> 13
+
+// function sumNumbers(numbers) {
+//   let sum = 0;
+
+//   for (let i = 0; i < numbers.length; i++) {
+//     sum += numbers[i];
+//   }
+
+//   return sum;
+// }
+
+// console.log(sumNumbers([1, 4, 8]));
+// console.log(sumNumbers([1, 3]));
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function "positives" which is given an array of numbers and
@@ -599,10 +626,34 @@ console.log(split("a-b-c", "-"));
 // positives([1, 2, 3]) --> [1, 2, 3]
 // positives([-1, -2, -3]) --> []
 
+// function positives(numbers) {
+//   let result = [];
+//   for (let i = 0; i < numbers.length; i++) {
+//     if (numbers[i] > 0) {
+//       result.push(numbers[i]);
+//     }
+//   }
+
+//   return result;
+// }
+
+// console.log(positives([1, -3, 5, -3, 0]));
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function "evens" which takes an array of numbers and returns a new
 // array containing only the even numbers in the given array.
 // Hint: you may want to re-use your "isEven" function from 01-predicate-functions.js
+
+// function isEven(num) {
+// if (num % 2 === 0){
+//     return "even"
+// } else {
+//     return "odd"
+// }
+
+// }
+
+// console.log(isEven(2));
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function "odds" which takes an array of numbers and returns a new
@@ -625,6 +676,17 @@ console.log(split("a-b-c", "-"));
 // Example:
 // squareDance([1, 2, 3]) --> [1, 4, 9]
 
+
+// function isOdd(num) {
+//   return num % 2 !== 0;
+// }
+
+// function odds(arr) {
+//   return arr.filter(isOdd);
+// }
+
+// console.log(odds([1, 2, 3, 4, 5, 6]));
+
 //Exercise
 
 // Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
@@ -637,50 +699,5 @@ console.log(split("a-b-c", "-"));
 // Output: [0,1]
 // Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
 
-//Exercise
 
-// Given an integer x, return true if x is palindrome integer.
 
-// An integer is a palindrome when it reads the same backward as forward.
-
-// For example, 121 is a palindrome while 123 is not.
-
-// Input: x = 121
-// Output: true
-// Explanation: 121 reads as 121 from left to right and from right to left.
-
-//Exercise
-
-// Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
-
-// An input string is valid if:
-
-// Open brackets must be closed by the same type of brackets.
-// Open brackets must be closed in the correct order.
-
-// Example 1:
-
-// Input: s = "()"
-// Output: true
-// Example 2:
-
-// Input: s = "()[]{}"
-// Output: true
-
-//Exercise
-
-// write a JavaScript function that checks if the string is palindrome or not.
-
-// A string is a palindrome if it is read the same from forward or backward.
-//  For example, dad reads the same either from forward or backward. So the word dad is a palindrome.
-// Similarly, madam is also a palindrome.
-
-// Input: s = "dad"
-// Output: true
-// Example 2:
-
-// Input: s = "civic"
-// Output: true
-
-// Input: s = "race"
-// Output: false
