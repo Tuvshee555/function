@@ -363,68 +363,118 @@ and should return a new array that is identical to the old array. You can name t
 // > console.log(findSmallest([30, 45, 60, 7]));
 // > 1
 
-function findSmallest(arr) {
-  let smallest = arr[0];  // Start by assuming the first element is the smallest
+// function findSmallest(arr) {
+//   let smallest = arr[0];
   
-  for (let i = 1; i < arr.length; i++) {
-    if (arr[i] < smallest) {
-      smallest = arr[i];  // If current value is smaller, update smallest
-    }
-  }
+//   for (let i = 1; i < arr.length; i++) {
+//     if (arr[i] < smallest) {
+//       smallest = arr[i];
+//     }
+//   }
   
-  return smallest;  // Return the smallest value
-}
+//   return smallest; 
+// }
 
-console.log(findSmallest([30, 45, 60, 7]));  // Output: 7
+// console.log(findSmallest([30, 45, 60, 7])); 
 
 
 // Exercise 2
-
 // Create a function that will accept an array, check the data type of each element. The function will delete string elements and will return a the new array
-
 // Example:
 // > console.log(numbersOnly(['text', 3, 7, 'github', 13, 'dev']));
 // > [ 3, 7, 13 ]
 
-// Exercise 3
+// function numbersOnly(arr) {
+//   let onlynumber = [];
+//   for (let i = 0; i < arr.length; i++) {
+//     if (typeof arr[i] === 'number') {
+//       onlynumber.push(arr[i]);
+//     }
+//   }
+//   return onlynumber;
+// }
 
+// console.log(numbersOnly(['text', 3, 7, 'github', 13, 'dev']));
+
+// function numbersOnly(arr){
+//   return arr.filter(element => typeof element === `number`)
+// }
+// console.log(numbersOnly(['text', 3, 7, 'github', 13, 'dev']));
+
+// function numbersOnly(arr) {
+//   return arr.map(item => typeof item === 'number' ? item : null).filter(item => item !== null);
+// }
+
+// console.log(numbersOnly(['text', 3, 7, 'github', 13, 'dev']))
+
+
+// Exercise 3
 // Create a function that will accept an array and do the following:
 // Get the lowest element
 // Get the highest element
 // Get the length of array
 // Get the Average of all element;
 // Store these criteria in a new array
-
 // Example:
 // > console.log(minMaxLengthAverage([7, 13, 3, 77, 100]));
 // > [ 3, 100, 5, 40 ]
+
+// function minMaxLengthAverage(arr){
+//   const min = Math.min(...arr)
+//   const max = Math.max(...arr)
+//   const length = arr.length
+//   const avarage = arr.reduce((num, sum) => num+ sum, 0 ) / length
+//   return [min, max, length, avarage]
+// }
+// console.log(minMaxLengthAverage([7, 13, 3, 77, 100]));
+
+
 
 // Exercise 4
 
 // Count the number of Words
 // Return how many words was given
-
 // Example:
 // > countWords('hello from kbpsystem!');
 // > 3
 
-// Exercise 5
+// function countWords(arr){
+//   const word = arr.split(` `)
+//   return word.length
+// }
+// console.log(countWords('hello from kbpsystem!'));
 
+
+// Exercise 5
 // Multiply by Length
 // Multiply all elements in an array by it's length
-
 // Example:
 // > MultiplyByLength([4,1,1]);
 // > [12, 3, 3]
 
+// function MultiplyByLength(arr){
+//   const length = arr.length
+//   result = arr.map(value => value * length)
+//   return result
+// }
+// console.log(MultiplyByLength([4,1,1]));
+
+
 // Exercise 6
-
 // Find the correct Index location
-// Return the index location of an element from a given array. First argument is the array you'd like to search and the second one is the element (either string/number) to look for.
-
+// Return the index location of an element from a given array. First argument is the 
+// array you'd like to search and the second one is the element (either string/number) to look for.
 // Example:
 // > console.log(findIndex(['github', 'gitlab', 'bitbucket', 'apollo'], 'gitlab'));
 // > 1
+    
+// function findIndex(arr, index){
+//   return arr.indexOf(index)
+// }
+// console.log(findIndex(['github', 'gitlab', 'bitbucket', 'apollo'], 'gitlab'));
+
+
+
 
 // MAP FILTER REDUCE
 
@@ -435,3 +485,7 @@ console.log(findSmallest([30, 45, 60, 7]));  // Output: 7
 //   .reduce((acc, num) => acc += num,);
 
 // console.log(result);  // 24
+
+
+
+
