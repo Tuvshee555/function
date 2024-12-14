@@ -326,6 +326,28 @@ const carMaker = {
 console.log(`Odometer = ${carMaker.odometer+carMaker.drive}`);
 
 
+function carMarker(odometer) {
+  return {
+    odometer: odometer,  // Initialize odometer from the argument
+    drive: function(distance) {
+      this.odometer += distance;  // Increase odometer by the distance driven
+      return this.odometer;  // Return the updated odometer value
+    }
+  };
+}
+
+// Example usage:
+const myCar = carMarker(200);  // Initialize a car with an odometer reading of 200
+console.log(`Initial Odometer = ${myCar.odometer}`);  // Output: Initial Odometer = 200
+
+// Now drive the car for a distance of 100
+console.log(`Odometer after driving 100 miles = ${myCar.drive(100)}`);  // Output: Odometer after driving 100 miles = 300
+
+// Drive the car again for a distance of 50
+console.log(`Odometer after driving 50 miles = ${myCar.drive(50)}`);  // Output: Odometer after driving 50 miles = 350
+
+
+
 // */
 
 // function carMaker(/* code here */) {
