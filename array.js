@@ -375,7 +375,7 @@ and should return a new array that is identical to the old array. You can name t
 //   return smallest; 
 // }
 
-// console.log(findSmallest([30, 45, 60, 7])); 
+// console.log(findSmallest([30, 45, 60, 7]));
 
 
 // Exercise 2
