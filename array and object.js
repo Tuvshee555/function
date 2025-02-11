@@ -319,34 +319,31 @@ const reviews = [
 //          (1) causes the odometer in the object to be increased by the distance,
 //          (2) returns the updated value of the `odometer`.
 
-const carMaker = {
-  odometer: 200,
-  drive: 100,
-}
-console.log(`Odometer = ${carMaker.odometer+carMaker.drive}`);
+// const carMaker = {
+//   odometer: 200,
+//   drive: 100,
+// };
+// console.log(`Odometer = ${carMaker.odometer + carMaker.drive}`);
 
+// function carMarker(odometer) {
+//   return {
+//     odometer: odometer, // Initialize odometer from the argument
+//     drive: function (distance) {
+//       this.odometer += distance; // Increase odometer by the distance driven
+//       return this.odometer; // Return the updated odometer value
+//     },
+//   };
+// }
 
-function carMarker(odometer) {
-  return {
-    odometer: odometer,  // Initialize odometer from the argument
-    drive: function(distance) {
-      this.odometer += distance;  // Increase odometer by the distance driven
-      return this.odometer;  // Return the updated odometer value
-    }
-  };
-}
+// // Example usage:
+// const myCar = carMarker(200); // Initialize a car with an odometer reading of 200
+// console.log(`Initial Odometer = ${myCar.odometer}`); // Output: Initial Odometer = 200
 
-// Example usage:
-const myCar = carMarker(200);  // Initialize a car with an odometer reading of 200
-console.log(`Initial Odometer = ${myCar.odometer}`);  // Output: Initial Odometer = 200
+// // Now drive the car for a distance of 100
+// console.log(`Odometer after driving 100 miles = ${myCar.drive(100)}`); // Output: Odometer after driving 100 miles = 300
 
-// Now drive the car for a distance of 100
-console.log(`Odometer after driving 100 miles = ${myCar.drive(100)}`);  // Output: Odometer after driving 100 miles = 300
-
-// Drive the car again for a distance of 50
-console.log(`Odometer after driving 50 miles = ${myCar.drive(50)}`);  // Output: Odometer after driving 50 miles = 350
-
-
+// // Drive the car again for a distance of 50
+// console.log(`Odometer after driving 50 miles = ${myCar.drive(50)}`); // Output: Odometer after driving 50 miles = 350
 
 // */
 
@@ -361,76 +358,91 @@ console.log(`Odometer after driving 50 miles = ${myCar.drive(50)}`);  // Output:
 //   2. Implement userCanAffordSofa
 // */
 
-// // Exercise 13
+// Exercise 13
 
-// let superChimpOne = {
-//   name: "Chad",
-//   species: "Chimpanzee",
-//   mass: 9,
-//   age: 6,
-//   astronautID: 1,
-//   move: move(),
-// };
-// let salamander = {
-//   name: "Lacey",
-//   species: "Axolotl Salamander",
-//   mass: 0.1,
-//   age: 5,
-//   astronautID: 10,
-//   move: move(),
-// };
-// let animal1 = {
-//   name: "Brad",
-//   species: "Chimpanzee",
-//   mass: 11,
-//   age: 6,
-//   astronautID: 5,
-//   move: move(),
-// };
-// let animal2 = {
-//   name: "Leroy",
-//   species: "Beagle",
-//   mass: 14,
-//   age: 5,
-//   astronautID: 7,
-//   move: move(),
-// };
-// let animal3 = {
-//   name: "Almina",
-//   species: "Tardigrade",
-//   mass: 0.0000000001,
-//   age: 1,
-//   astronautID: 3,
-//   move: move(),
-// };
-// function move() {
-//   return Math.round(Math.random() * 10);
+let superChimpOne = {
+  name: "Chad",
+  species: "Chimpanzee",
+  mass: 9,
+  age: 6,
+  astronautID: 1,
+  move: move(),
+};
+let salamander = {
+  name: "Lacey",
+  species: "Axolotl Salamander",
+  mass: 0.1,
+  age: 5,
+  astronautID: 10,
+  move: move(),
+};
+let animal1 = {
+  name: "Brad",
+  species: "Chimpanzee",
+  mass: 11,
+  age: 6,
+  astronautID: 5,
+  move: move(),
+};
+let animal2 = {
+  name: "Leroy",
+  species: "Beagle",
+  mass: 14,
+  age: 5,
+  astronautID: 7,
+  move: move(),
+};
+let animal3 = {
+  name: "Almina",
+  species: "Tardigrade",
+  mass: 0.0000000001,
+  age: 1,
+  astronautID: 3,
+  move: move(),
+};
+function move() {
+  return Math.round(Math.random() * 10);
+}
+// After you have created the other object literals, add the astronautID property to each one.
+//Create an array to hold the animal objects.
+
+// Print out the relevant information about each animal.
+// return `${name} is a ${species}. They are ${age} years old and ${mass} kilograms. Their ID is ${astronautID}.`;
+// Array to hold all animals
+
+// let animals = [superChimpOne, salamander, animal1, animal2, animal3];
+// function crewReports(animal) {
+//   return `${animal.name} is a ${animal.species}. They are ${animal.age} years old and ${animal.mass} kilograms. Their ID is ${animal.astronautID}.`;
 // }
-// // After you have created the other object literals, add the astronautID property to each one.
-// //Create an array to hold the animal objects.
-
-// // Print out the relevant information about each animal.
-// // return `${name} is a ${species}. They are ${age} years old and ${mass} kilograms. Their ID is ${astronautID}.`;
-// function crewReports(animal) {}
+// animals.forEach((animal) => {
+//   console.log(crewReports(animal));
+// });
 
 // // Exercise 14
 
-// var movieDatabase = {
-//   title: "Pulp Fiction",
-//   duration: 120,
-//   stars: ["Bruce Willis", "Uma Thurman"],
-// };
+var movieDatabase = {
+  title: "Pulp Fiction",
+  duration: 120,
+  stars: ["Bruce Willis", "Uma Thurman"],
+};
 // // write the function to return Movie name and duration and start
 
+// function report(arr){
+//   return `title: ${arr.title} duration ${arr.duration} stars: ${arr.stars}`
+// }
+// console.log(report(movieDatabase));
+
+
+
 // // Create an object to hold information on your favorite recipe. It should have properties for title (a string), servings (a number), and ingredients (an array of strings).
-// // const recipe = {
-// //   title: "Mole",
-// //   servings: 2,
-// //   ingredients: ["cumin", "cinnamon", "cocoa"],
-// // };
-// // console.log title of the recipe
-// // console.log 'Servings: recipe servings'
-// //console.log the ingredients one by one
+const recipe = {
+  title: "Mole",
+  servings: 2,
+  ingredients: ["cumin", "cinnamon", "cocoa"],
+};
+// console.log title of the recipe
+// console.log 'Servings: recipe servings'
+// console.log the ingredients one by one
 
 // // //Task2
 
@@ -479,4 +491,14 @@ console.log(`Odometer after driving 50 miles = ${myCar.drive(50)}`);  // Output:
 
 // // console.log(burger.discount("student"));
 // // console.log(burger.discount("public"));
-// // c;
+
+
+
+
+
+// DOM document object model
+
+// document.getElementById("game-container").appendChild(title)
+
+
+// document.getElementById("game-container").replaceChild
